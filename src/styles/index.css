@@ -1,11 +1,116 @@
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
-*/
+
+.notebook-container {
+    background-color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+
+.paper {
+    background: white;
+    
+    background-image: linear-gradient(rgba(0, 0, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 30px; 
+    width: 100%;
+    max-width: 500px;
+    min-height: 600px;
+    padding: 60px 40px 40px 60px; 
+    position: relative;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.15);
+    font-family: 'Indie Flower', cursive;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.paper::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 50px;
+    width: 2px; 
+    height: 100%;
+    background: rgba(255, 0, 0, 0.2);
+}
+
+
+.rings {
+    position: absolute;
+    top: -15px; 
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 30px;
+    z-index: 10;
+}
+
+.ring {
+    width: 15px;
+    height: 35px;
+    background: linear-gradient(to right, #d1d1d1, #f0f0f0, #b1b1b1);
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.paper input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background: transparent;
+    font-family: 'Indie Flower', cursive;
+    font-size: 26px;
+    outline: none;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(0,0,0,0.05);
+    padding: 5px 0;
+    font-size: 22px;
+}
+
+
+.delete {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.delete:hover {
+    opacity: 1;
+}
+
+
+.todo-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 16px;
+    color: #7f8c8d;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+
