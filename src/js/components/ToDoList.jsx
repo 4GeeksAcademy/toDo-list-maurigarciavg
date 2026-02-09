@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const ToDoList = () => {
 	const [value, setValue] = useState("");
 	const [list, setList] = useState([]);
-	const user = "maurigarciavg";
+	const user = "maurigarciavgPrueba";
 
 	const createUser = async () => {
 		try {
@@ -23,7 +23,7 @@ const ToDoList = () => {
 
 	const getTasks = async () => {
 		try {
-			const response = await fetch("https://playground.4geeks.com/todo/users/maurigarciavg");
+			const response = await fetch(`https://playground.4geeks.com/todo/users/${user}`);
 			if (response.ok) {
 				const data = await response.json();
 				setList(data.todos);
@@ -42,7 +42,7 @@ const ToDoList = () => {
 
 	const sendTasks = async () => {
 		try {
-			const response = await fetch("https://playground.4geeks.com/todo/todos/maurigarciavg", {
+			const response = await fetch(`https://playground.4geeks.com/todo/users/${user}`, {
 				method: "POST",
 				headers: {
 					'Content-Type': 'application/json'
